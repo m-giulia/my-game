@@ -7,9 +7,37 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <ul>
+    <!-- <h1>ME MO RY</h1> -->
+    <div class="ready">
+        <h3>ARE YOU<br>READY?</h3>
+        <button onclick="start()">START!</button>
+    </div>
+    <div class="controlli">
+        <div class="countdown"></div>
+        <img class="pausa" src="./images/pause.svg" alt="pause" onclick="togglePausa()">
+    </div>
+    <div class="container">
 
-    </ul>
+    </div>
+
+
+
+    
+    <audio id="tema">
+        <source src="./audio/On-The-Roof-Grim-Fandango-Remastered-OST.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="corrette">
+        <source src="./audio/ui-select.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="finito">
+        <source src="./audio/Grim-Fandango-win.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="scopri">
+        <source src="./audio/scopri.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="copri">
+        <source src="./audio/copri.mp3" type="audio/mpeg">
+    </audio>
     <script src="./js/main.js"></script>
 </body>
 </html>
