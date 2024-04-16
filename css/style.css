@@ -33,15 +33,9 @@ body.win {
 	animation: scorribg 5s ease infinite;
 }
 @keyframes scorribg {
-    0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0% {background-position: 0% 50%;}
+	50% {background-position: 100% 50%;}
+	100% {background-position: 0% 50%;}
 }
 a {
     text-decoration: none;
@@ -92,9 +86,7 @@ h3 {
         background-position: 0% 200%;
         transform: scale(3);
     }
-    100% {
-        transform: scale(1);
-    }
+    100% {transform: scale(1);}
 }
 .sopratitolo {
     margin: 0;

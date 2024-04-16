@@ -1,8 +1,9 @@
 let arrayNumero = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"];
 let container = document.querySelector(".container");
 let titolo = document.createElement("h1");
-
 var tema = document.getElementById("tema");
+
+
 
 function togglePausa() {
     if (tema.paused) {
@@ -12,9 +13,11 @@ function togglePausa() {
         tema.pause();
         document.querySelector(".pausa").src = "./images/pause.svg";
     }
-  return tema.paused ? tema.play() : tema.pause();
+  //return tema.paused ? tema.play() : tema.pause();
   //return finito.paused ? finito.play() : finito.pause();
 };
+
+
 
 function start() {
     let ready = document.querySelector(".ready");
@@ -25,6 +28,8 @@ function start() {
     iniziaGioco();
     
 }
+
+
 
 function iniziaGioco(){
     let quanteVolte = 0;
@@ -39,15 +44,15 @@ function iniziaGioco(){
         let img = document.createElement("img");
         let imgRetro = document.createElement("img");
         titolo.innerHTML = "ME MO RY";
-        
-
         img.src = "./images/" + numCarta + ".png";
         imgRetro.src = "./images/0.png";
         img.className = "retro";
+
         if (quanteVolte == 8) {
             container.append(titolo);
             //console.log(quanteVolte);
         }
+
         if (parseInt(numCarta) > 8) {
             img.className = "image-" + (numCarta - 8);
             //console.log(numCarta - 8);
@@ -56,6 +61,7 @@ function iniziaGioco(){
             img.className = "image-" + numCarta;
             //console.log(numCarta);
         }
+
         divContCarta.className = "contenitore-carta";
         div.className = "carta-" + numCarta + " coperta";
         divDavanti.className = "davanti";
