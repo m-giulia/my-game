@@ -1,4 +1,6 @@
-let arrayNumero = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"];
+//let arrayNumero = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"];
+
+let arrayNumero = [...Array(17).keys()].slice(1);
 let container = document.querySelector(".container");
 let titolo = document.createElement("h1");
 var tema = document.getElementById("tema");
@@ -8,10 +10,10 @@ var tema = document.getElementById("tema");
 function togglePausa() {
     if (tema.paused) {
         tema.play();
-        document.querySelector(".pausa").src = "./images/play.svg";
+        document.querySelector(".pausa").src = "./images/pause.svg";
     } else {
         tema.pause();
-        document.querySelector(".pausa").src = "./images/pause.svg";
+        document.querySelector(".pausa").src = "./images/play.svg";
     }
   //return tema.paused ? tema.play() : tema.pause();
   //return finito.paused ? finito.play() : finito.pause();
@@ -37,14 +39,15 @@ function iniziaGioco(){
     
     arrayNumero.forEach((numCarta,index) => {
         let divContCarta = document.createElement("div");
+
         divContCarta.style.animationDelay = "0." + numCarta + "s";
+
         let div = document.createElement("div");
         let divDavanti = document.createElement("div");
         let divDietro = document.createElement("div");
         let img = document.createElement("img");
         let imgRetro = document.createElement("img");
         titolo.innerHTML = "ME MO RY";
-        img.src = "./images/" + numCarta + ".png";
         imgRetro.src = "./images/0.png";
         img.className = "retro";
 
@@ -53,13 +56,16 @@ function iniziaGioco(){
             //console.log(quanteVolte);
         }
 
-        if (parseInt(numCarta) > 8) {
-            img.className = "image-" + (numCarta - 8);
-            //console.log(numCarta - 8);
+        if (parseInt(numCarta) <= 8) {
+            img.className = "image-" + numCarta;
+            img.src = "./images/" + numCarta + ".png";
+            //console.log(numCarta);
         }
         else { 
-            img.className = "image-" + numCarta;
-            //console.log(numCarta);
+            img.className = "image-" + (numCarta - 8);
+            img.src = "./images/" + (numCarta - 8) + ".png";
+            console.log(numCarta);
+            console.log(numCarta - 8);
         }
 
         divContCarta.className = "contenitore-carta";
@@ -69,7 +75,6 @@ function iniziaGioco(){
         div.style.background = "";
         div.onclick = function(){giraCarte(numCarta)};
         
-        
         //container.append(divContCarta);
         divContCarta.append(div);
         div.append(divDavanti);
@@ -78,7 +83,7 @@ function iniziaGioco(){
         divDietro.append(imgRetro);
         
         container.append(divContCarta);
-        console.log(divContCarta);
+        //console.log(divContCarta);
         
         quanteVolte++;
         //console.log(divContCarta);
